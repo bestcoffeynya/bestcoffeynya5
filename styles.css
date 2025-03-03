@@ -117,20 +117,22 @@ h2 {
 }
 
 .call-popup-button {
-    display: inline-block;
-    padding: 12px 20px;
+    display: block;
+    margin: 20px auto; /* Центрирование */
+    padding: 14px 28px;
     font-size: 18px;
     font-weight: bold;
-    color: white;
-    background-color: #D4AF37;
+    color: #fff;
+    background: linear-gradient(135deg, #8B5A2B, #D4AF37);
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .call-popup-button:hover {
-    background-color: #b28f2f;
+    background: linear-gradient(135deg, #A67C52, #E1C16E);
     transform: scale(1.05);
 }
 
@@ -141,20 +143,46 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    border-radius: 5px;
+    background: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
-.popup-content {
-    text-align: center;
+.popup-content h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #5a3e1b;
 }
 
 .popup input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.submit-call {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(135deg, #8B5A2B, #D4AF37);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.submit-call:hover {
+    background: linear-gradient(135deg, #A67C52, #E1C16E);
+    transform: scale(1.05);
 }
 
 .close-btn {
@@ -163,6 +191,17 @@ h2 {
     right: 15px;
     font-size: 24px;
     cursor: pointer;
+    color: #5a3e1b;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #D4AF37;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 footer {
