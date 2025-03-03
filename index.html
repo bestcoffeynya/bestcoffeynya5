@@ -133,13 +133,13 @@ document.querySelector('.close-btn').addEventListener('click', function() {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const fadeElements = document.querySelectorAll(".fade-in");
+    const menuItems = document.querySelectorAll(".menu-items .item");
+    const fadeElements = document.querySelectorAll(".fade-in:not(#about):not(#menu)"); 
 
     function checkVisibility() {
-        const scrollTop = window.scrollY;
-        fadeElements.forEach((el, index) => {
+        menuItems.forEach((el, index) => {
             const rect = el.getBoundingClientRect();
-            const delay = index * 200; // Увеличиваем задержку
+            const delay = index * 200;
 
             if (rect.top < window.innerHeight * 0.85) {
                 setTimeout(() => {
@@ -151,10 +151,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, delay);
             }
         });
+
+        fadeElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                el.classList.add("visible");
+            } else if (rect.bottom > window.innerHeight) {
+                el.classList.remove("visible");
+            }
+        });
     }
 
+    // Отключаем эффект для секций "О нас" и "Меню" (заголовок)
+    document.querySelector("#about").classList.add("visible");
+    document.querySelector("#menu").classList.add("visible");
+
     window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Запускаем сразу при загрузке страницы
+    checkVisibility(); // Запуск при загрузке
 });
 </script>
     
