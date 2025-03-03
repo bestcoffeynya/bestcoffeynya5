@@ -27,53 +27,53 @@
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="fade-in">
         <div class="container">
             <h2>О нас</h2>
             <p>Добро пожаловать в <strong>Best кOfейня</strong>! Наша кофейня-пекарня предлагает ароматный кофе, свежую выпечку, полуфабрикаты и комплексные обеды. Мы находимся в сердце Кыштыма по адресу ул. Ленина 6 и рады предложить Вам уютное место для отдыха.</p>
         </div>
     </section>
 
-<section id="menu">
+<section id="menu" class="fade-in">
     <div class="container">
         <h2>Меню</h2>
         <div class="menu-items">
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/1stAboRqbtF5RCJfRsX6vEizMDI9EUH1OBDbKPP2tG-k/edit?tab=t.0" target="_blank">
                     <img src="images/coffee.jpg" alt="Кофе">
                 </a>
                 <h3>Кофе</h3>
                 <p>Эспрессо, капучино, латте, американо и многое другое.</p>
             </div>
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/13TIKAiuQvkats2YYTWpcIMcn5mhdWenfFP_V778_XRA/edit?tab=t.0" target="_blank">
                     <img src="images/bakery.jpg" alt="Выпечка">
                 </a>
                 <h3>Выпечка</h3>
                 <p>Круассаны, пироги, слойки и багеты, приготовленные с любовью.</p>
             </div>
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/1u2fSMAQs4kFAUD6MP6RFa2e8AgmIJWtmcUZDOAeACPc/edit?tab=t.0" target="_blank">
                     <img src="images/snacks.jpg" alt="Закуски">
                 </a>
                 <h3>Десерты</h3>
                 <p>Торты, пирожные, печенье, трайфл.</p>
             </div>
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/1t_jGSlWHfCgg0L9YNfIfh9tj5dlDQpc-NNvc0ch-tqg/edit?tab=t.0" target="_blank">
                     <img src="images/salads.jpg" alt="Салаты">
                 </a>
                 <h3>Салаты</h3>
                 <p>Сезонные овощные и мясные салаты для свежего перекуса.</p>
             </div>
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/1XCUokj1ovb6hoFmLfBm6br3NLewY5sdY-_hrO9V898A/edit?tab=t.0" target="_blank">
                     <img src="images/bread.jpg" alt="Хлеба">
                 </a>
                 <h3>Хлеба</h3>
                 <p>Свежий хлеб, багеты и сдоба на каждый день.</p>
             </div>
-            <div class="item">
+            <div class="item" class="fade-in">
                 <a href="https://docs.google.com/document/d/1TpNqmLVKDJqqbzXMpg5GjRCzXVV0DkpSK3Xi3ZHzDQc/edit?tab=t.0" target="_blank">
                     <img src="images/lunch.jpg" alt="Комплексные обеды">
                 </a>
@@ -84,7 +84,7 @@
     </div>
 </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <div class="container">
             <h2>Контакты</h2>
             <p>Адрес: ул. Ленина, 6, Кыштым</p>
@@ -105,7 +105,7 @@
     </div>
 </div>
     
-    <section id="map">
+    <section id="map" class="fade-in">
     <div class="container">
         <h2>Мы на карте</h2>
         <div style="position:relative;overflow:hidden;">
@@ -130,5 +130,24 @@ document.querySelector('.close-btn').addEventListener('click', function() {
     document.getElementById('callPopup').style.display = 'none';
 });
 </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    function checkVisibility() {
+        fadeElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Проверяем при загрузке
+});
+</script>
+    
 </body>
 </html>
