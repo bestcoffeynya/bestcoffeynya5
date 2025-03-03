@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let scrollTop = window.scrollY;
         fadeElements.forEach((el, index) => {
             const rect = el.getBoundingClientRect();
-            const delay = index * 150; // Задержка исчезновения
+            const delay = index * 200; // Увеличиваем задержку
 
             if (rect.top < window.innerHeight * 0.85 && scrollTop > lastScrollTop) {
                 setTimeout(() => {
@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkVisibility();
 });
 </script>
+
 
     
 </body>
