@@ -76,14 +76,6 @@ h2 {
     border-radius: 8px;
 }
 
-.menu-items .item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: 0.3s ease-in-out;
-    border: 2px solid transparent;
-}
-
 .menu-items .item a {
     display: inline-block;
     padding: 5px; /* Добавляем немного отступа */
