@@ -138,19 +138,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkVisibility() {
         let scrollTop = window.scrollY;
-        fadeElements.forEach((el) => {
+        fadeElements.forEach((el, index) => {
             const rect = el.getBoundingClientRect();
+            const delay = index * 150; // Задержка исчезновения
+
             if (rect.top < window.innerHeight * 0.85 && scrollTop > lastScrollTop) {
-                el.classList.add("visible");
+                setTimeout(() => {
+                    el.classList.add("visible");
+                }, delay);
             } else if (scrollTop < lastScrollTop) {
-                el.classList.remove("visible");
+                setTimeout(() => {
+                    el.classList.remove("visible");
+                }, delay);
             }
         });
+
         lastScrollTop = scrollTop;
     }
 
     window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Проверяем при загрузке
+    checkVisibility();
 });
 </script>
 
