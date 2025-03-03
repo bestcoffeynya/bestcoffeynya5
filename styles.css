@@ -83,6 +83,18 @@ h2 {
     transform: scale(1.15);
 }
 
+.menu-items .item a {
+    display: block;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-items .item a:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    border: 4px solid #D4AF37;
+    transform: scale(1.1);
+}
+
 /* Стили для секций "О нас" и "Контакты" */
 #about, #contacts {
     background-color: #fff3db;
