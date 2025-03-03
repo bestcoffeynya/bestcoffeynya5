@@ -1,0 +1,102 @@
+/* Подключение шрифта */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f1e4;
+    color: #333;
+}
+
+/* Шапка сайта с фоном кофейных зёрен */
+header {
+    background: url('images/coffee-beans.jpg') no-repeat center/cover;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D4AF37;
+}
+
+/* Стили для меню */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #5a3e1b;
+}
+
+.menu-category {
+    margin: 20px 0;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-items .item {
+    width: 30%;
+    margin-bottom: 2em;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu-item img:hover {
+    border: 4px solid #D4AF37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    transform: scale(1.15);
+}
+
+/* Стили для секций "О нас" и "Контакты" */
+#about, #contacts {
+    background-color: #fff3db;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+    background: #5a3e1b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
