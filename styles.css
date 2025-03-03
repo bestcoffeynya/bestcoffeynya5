@@ -211,3 +211,23 @@ footer {
     padding: 20px;
     margin-top: 50px;
 }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-items {
+        display: flex;
+        flex-direction: column; /* Элементы в столбец */
+        align-items: center;
+    }
+
+    .menu-items .item {
+        width: 90%; /* Увеличиваем ширину */
+        text-align: center;
+    }
+
+    .menu-items .item img {
+        width: 180px; /* Делаем изображения крупнее */
+        height: auto;
+        max-width: 100%;
+    }
+}
