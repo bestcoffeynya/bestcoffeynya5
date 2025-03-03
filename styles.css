@@ -74,7 +74,6 @@ h2 {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
-    overflow: hidden;
 }
 
 .menu-items .item img {
@@ -92,7 +91,9 @@ h2 {
 }
 
 .menu-items .item a {
-    display: block;
+    display: inline-block;
+    padding: 5px; /* Добавляем немного отступа */
+    border: 3px solid transparent; /* Прозрачная рамка по умолчанию */
     border-radius: 10px;
     transition: 0.3s ease-in-out;
     text-decoration: none;
@@ -102,6 +103,10 @@ h2 {
     border: 3px solid #8B5A2B; /* Кофейная рамка */
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
     transform: none; /* Убираем увеличение */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* Стили для секций "О нас" и "Контакты" */
