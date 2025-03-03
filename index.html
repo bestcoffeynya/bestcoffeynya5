@@ -93,6 +93,18 @@
         </div>
     </section>
 
+    <button class="call-popup-button">📞 Заказать звонок</button>
+
+<!-- Форма обратного звонка -->
+<div class="popup" id="callPopup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Оставьте ваш номер</h2>
+        <input type="text" placeholder="Введите номер телефона">
+        <button class="submit-call">Отправить</button>
+    </div>
+</div>
+    
     <section id="map">
     <div class="container">
         <h2>Мы на карте</h2>
@@ -108,5 +120,15 @@
     <footer>
         <p>© 2025 Best кOfейня - Кофейня и Пекарня. Все права защищены.</p>
     </footer>
+
+    <script>
+document.querySelector('.call-popup-button').addEventListener('click', function() {
+    document.getElementById('callPopup').style.display = 'block';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('callPopup').style.display = 'none';
+});
+</script>
 </body>
 </html>
