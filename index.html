@@ -131,23 +131,29 @@ document.querySelector('.close-btn').addEventListener('click', function() {
 });
 </script>
 
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in");
+    let lastScrollTop = window.scrollY;
 
     function checkVisibility() {
+        let scrollTop = window.scrollY;
         fadeElements.forEach((el) => {
             const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.85) {
+            if (rect.top < window.innerHeight * 0.85 && scrollTop > lastScrollTop) {
                 el.classList.add("visible");
+            } else if (scrollTop < lastScrollTop) {
+                el.classList.remove("visible");
             }
         });
+        lastScrollTop = scrollTop;
     }
 
     window.addEventListener("scroll", checkVisibility);
     checkVisibility(); // Проверяем при загрузке
 });
 </script>
+
     
 </body>
 </html>
