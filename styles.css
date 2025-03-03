@@ -105,6 +105,17 @@ h2 {
     margin: auto;
 }
 
+#map {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff3db;
+}
+
+#map iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 footer {
     background: #5a3e1b;
     color: white;
