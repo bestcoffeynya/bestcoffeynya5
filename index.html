@@ -134,34 +134,29 @@ document.querySelector('.close-btn').addEventListener('click', function() {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in");
-    let lastScrollTop = window.scrollY;
 
     function checkVisibility() {
-        let scrollTop = window.scrollY;
+        const scrollTop = window.scrollY;
         fadeElements.forEach((el, index) => {
             const rect = el.getBoundingClientRect();
             const delay = index * 200; // Увеличиваем задержку
 
-            if (rect.top < window.innerHeight * 0.85 && scrollTop > lastScrollTop) {
+            if (rect.top < window.innerHeight * 0.85) {
                 setTimeout(() => {
                     el.classList.add("visible");
                 }, delay);
-            } else if (scrollTop < lastScrollTop) {
+            } else if (rect.bottom > window.innerHeight) {
                 setTimeout(() => {
                     el.classList.remove("visible");
                 }, delay);
             }
         });
-
-        lastScrollTop = scrollTop;
     }
 
     window.addEventListener("scroll", checkVisibility);
-    checkVisibility();
+    checkVisibility(); // Запускаем сразу при загрузке страницы
 });
 </script>
-
-
     
 </body>
 </html>
