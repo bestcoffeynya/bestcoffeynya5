@@ -164,6 +164,7 @@ h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
+    z-index: 9999; /* Поднимаем окно над картой */
 }
 
 .popup-content h2 {
